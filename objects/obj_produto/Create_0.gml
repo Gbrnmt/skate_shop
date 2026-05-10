@@ -84,7 +84,7 @@ desenha_produto = function()
 	draw_rectangle_color(_x1, _y1, _x1 + _progresso, _y2, c_green, c_green, c_green, c_green , false)
 	//desenhando o quanto eu rendo 
 	draw_set_halign(2);
-	var _str = "$" + string_format(lucro, 0, 2);
+	var _str = convert_num(lucro);
 	draw_text(_x2,_y1 + sprite_height / 8, _str);
 	draw_set_halign(1);
 	
@@ -94,13 +94,13 @@ desenha_produto = function()
 	_x2 = _x1 + 64;
 	_y2 = _y1 + 32;
 	var _cor = global.gold >= custo ? c_green : c_grey;
-	var _str = string_format(custo,0,0);
+	var _str = convert_num(custo);
 	if (efeito_comprar)
 	{
 		draw_rectangle_color(_x1 - 1, _y1 -1, _x2 + 1, _y2 + 1, c_black, c_black, c_black, c_black , false);
 	}
 	draw_rectangle_color(_x1, _y1, _x2, _y2, _cor, _cor, _cor, _cor, false );
-	draw_text_transformed(_x1 + 32, _y1 + 16, "$" + _str, 1,1,0 );
+	draw_text_transformed(_x1 + 32, _y1 + 16, _str, 1,1,0 );
 	
 	//desenhando o tempo que leva
 	var _s = floor((tempo - timer) % 60);

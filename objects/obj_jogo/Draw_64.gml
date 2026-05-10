@@ -6,7 +6,7 @@
 var _n = 1;
 var _alt = 20;
 draw_set_halign(0);
-var _str = "$" + string_format(global.gold,0,2);
+var _str = convert_num(global.gold);
 draw_text(20, _alt * _n++, _str);
 draw_set_halign(-1);
 

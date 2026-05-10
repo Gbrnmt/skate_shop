@@ -32,6 +32,7 @@
     {"id":{"name":"obj_manager","path":"objects/obj_manager/obj_manager.yy",},},
     {"id":{"name":"obj_produto","path":"objects/obj_produto/obj_produto.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"funcoes","path":"scripts/funcoes/funcoes.yy",},},
     {"id":{"name":"inicializar","path":"scripts/inicializar/inicializar.yy",},},
     {"id":{"name":"back","path":"sprites/back/back.yy",},},
     {"id":{"name":"spr_botao","path":"sprites/spr_botao/spr_botao.yy",},},
