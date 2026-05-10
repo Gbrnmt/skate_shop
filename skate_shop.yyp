@@ -11,13 +11,15 @@
   "defaultScriptType":0,
   "Folders":[
     {"$GMFolder":"","%Name":"fonte","folderPath":"folders/fonte.yy","name":"fonte","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"script","folderPath":"folders/script.yy","name":"script","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"objetos","folderPath":"folders/objetos.yy","name":"objetos","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"room","folderPath":"folders/room.yy","name":"room","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"script","folderPath":"folders/script.yy","name":"script","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"sprites","folderPath":"folders/sprites.yy","name":"sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "ForcedPrefabProjectReferences":[],
-  "IncludedFiles":[],
+  "IncludedFiles":[
+    {"$GMIncludedFile":"","%Name":"dados.json","CopyToMask":-1,"filePath":"datafiles","name":"dados.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+  ],
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{

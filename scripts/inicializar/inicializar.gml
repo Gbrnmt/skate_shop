@@ -31,6 +31,25 @@ global.managers = [0, 0, 0, 0, 0, 0, 0, 0]
 global.produtos = [0, 0, 0, 0, 0, 0, 0, 0]
 
 
+//abrindo omeu jason
+var _file = file_text_open_read("dados.json");
+var _txt = "";
+while (true)
+{
+	if (file_text_eof(_file))
+	{
+		break;
+	}
+	else
+	{
+		var _linha = file_text_readln(_file);
+		_txt += _linha;
+	}
+}
+global.struct_produtos = json_parse(_txt).items;
+
+
+
 
 
 

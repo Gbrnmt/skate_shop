@@ -13,43 +13,46 @@ cria_produtos = function(_qtd = 1)
 {
 	for ( var i = 0; i < _qtd; i++)
 	{
-		produtos[i] = instance_create_layer(0, 0, layer, obj_produto, {indice : i});
-		with(produtos[i])
-		{
-			indice = i;
-			tempo = i + 1;
-			custo = i + 1;
-			lucro_base = i + 1;
-			
-			
-		}
+		//meus dados 
+		var _struct = global.struct_produtos[i];
+		
+		produtos[i] = instance_create_layer(0, 0, layer, obj_produto, _struct);
 	}
 }
 
-rolagem_produtos = function()
+
+rolagem = function(_val = 10)
 {
+	var _qtd = 0;
 	if (mouse_wheel_up())
 	{
-		produtos_y += 45;
+		_qtd = _val;
 	}
 	if(mouse_wheel_down())
 	{
-		produtos_y -= 45;
+		_qtd = - _val;
 	}
-	var _qtd = array_length(produtos);
-	var _max = (96 * _qtd) + (20 * _qtd) + 20 - room_height;
-	produtos_y = clamp(produtos_y, -_max, base_y);
+	return _qtd;
 }
 
 gerencia_produtos = function()
 {
-	rolagem_produtos();
+	static _meu_y = 0;
+	var _alt = sprite_get_height(spr_produto);
+	var _larg = sprite_get_width(spr_produto);
+	var _marg = 20;
+	_meu_y += rolagem(30);
+	
+	var _qtd = array_length(produtos);
+	var _max = (_alt * _qtd) + (_marg * _qtd) + _marg - room_height;
+	
+	_meu_y = clamp(_meu_y, -_max, 0)
 	
 	for (var i = 0; i < array_length(produtos); i++)
 	{
 		var _marg = 20;
 		var _x = 160;
-		var _y = produtos_y + _marg + ((i * 96) + (i * _marg));
+		var _y = _meu_y + _marg + ((i * _alt) + (i * _marg));
 	
 		with(produtos[i])
 		{
@@ -59,4 +62,4 @@ gerencia_produtos = function()
 	}
 }
 
-cria_produtos(10);
+cria_produtos(array_length(global.struct_produtos));
