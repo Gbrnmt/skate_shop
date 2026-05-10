@@ -17,3 +17,4 @@ if (keyboard_check(ord("L")))
 }
 
 gerencia_produtos();
+gerencia_managers();
