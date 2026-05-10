@@ -32,7 +32,6 @@
     {"id":{"name":"inicializar","path":"scripts/inicializar/inicializar.yy",},},
     {"id":{"name":"back","path":"sprites/back/back.yy",},},
     {"id":{"name":"spr_item","path":"sprites/spr_item/spr_item.yy",},},
-    {"id":{"name":"spr_manager","path":"sprites/spr_manager/spr_manager.yy",},},
     {"id":{"name":"spr_produto","path":"sprites/spr_produto/spr_produto.yy",},},
   ],
   "resourceType":"GMProject",

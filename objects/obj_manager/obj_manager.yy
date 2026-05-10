@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_manager",
-    "path":"sprites/spr_manager/spr_manager.yy",
+    "name":"spr_produto",
+    "path":"sprites/spr_produto/spr_produto.yy",
   },
   "spriteMaskId":null,
   "visible":true,

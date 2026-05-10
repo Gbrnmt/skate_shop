@@ -24,6 +24,70 @@ global.produtos[indice] = id;
 //desenhando o produto
 desenha_produto = function()
 {
+	//me desenhando
+	draw_self();
+	
+	//desenhando o produto a minha esquerda
+	draw_sprite(spr_item,0 ,x,y - 16);
+	
+	//alinghando meu texto
+	draw_set_valign(1);
+	draw_set_halign(1);
+	
+	//desenhando o meu level
+	var _x = x;
+	var _y = y + 24;
+	draw_ellipse_color(_x - 24, _y - 16, _x + 24, _y + 16, c_dkgray, c_dkgray,false);
+	draw_text(_x, _y, level);
+	
+	//desenhando barra de progresso 
+	var _x1 = x + 42;
+	var _y1 = y - 32;
+	var _larg = sprite_width / 1.5;
+	var _x2 = _x1 + _larg;
+	var _y2 = _y1 + sprite_height / 4;
+	//desenhando fundo da barra 
+	draw_rectangle_color(_x1 - 1, _y1 -1, _x2 + 1, _y2 + 1, c_black, c_black, c_black, c_black , false)
+	draw_rectangle_color(_x1, _y1, _x2, _y2, c_gray, c_gray, c_gray, c_gray , false)
+	var _progresso = (timer / tempo) * _larg;
+	draw_rectangle_color(_x1, _y1, _x1 + _progresso, _y2, c_green, c_green, c_green, c_green , false)
+	//desenhando o quanto eu rendo 
+	draw_set_halign(2);
+	var _str = "$" + string_format(lucro, 0, 2);
+	draw_text(_x2,_y1 + sprite_height / 8, _str);
+	draw_set_halign(1);
+	
+	//desenhando o meu preco
+	_x1 = x + 42;
+	_y1 = y + 8;
+	_x2 = _x1 + 64;
+	_y2 = _y1 + 32;
+	var _cor = global.gold >= custo ? c_green : c_grey;
+	var _str = string_format(custo,0,0);
+	if (efeito_comprar)
+	{
+		draw_rectangle_color(_x1 - 1, _y1 -1, _x2 + 1, _y2 + 1, c_black, c_black, c_black, c_black , false);
+	}
+	draw_rectangle_color(_x1, _y1, _x2, _y2, _cor, _cor, _cor, _cor, false );
+	draw_text_transformed(_x1 + 32, _y1 + 16, "$" + _str, 1,1,0 );
+	
+	//desenhando o tempo que leva
+	var _s = floor((tempo - timer) % 60);
+	var _m = (tempo - timer) div 60;
+	var _h = ((tempo - timer) div 60) div 60;
+	draw_set_halign(2);
+	
+	var _seg = _s > 9 ? _s : "0" + string(_s);
+	var _min = _m > 9 ? _m : "0" + string(_m);
+	var _hor = _h > 9 ? _h : "0" + string(_h);
+	draw_text(x + sprite_width - 8 , _y1 + 16, string("{0}:{1}:{2}", _hor, _min, _seg))
+	draw_set_halign(1);
+	
+	draw_set_valign(-1);
+	draw_set_halign(-1);
+	
+	
+	
 	
 }
 
