@@ -11,6 +11,7 @@
   "defaultScriptType":0,
   "Folders":[
     {"$GMFolder":"","%Name":"fonte","folderPath":"folders/fonte.yy","name":"fonte","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"script","folderPath":"folders/script.yy","name":"script","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"objetos","folderPath":"folders/objetos.yy","name":"objetos","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"room","folderPath":"folders/room.yy","name":"room","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"sprites","folderPath":"folders/sprites.yy","name":"sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -24,7 +25,15 @@
   },
   "name":"skate_shop",
   "resources":[
+    {"id":{"name":"obj_jogo","path":"objects/obj_jogo/obj_jogo.yy",},},
+    {"id":{"name":"obj_manager","path":"objects/obj_manager/obj_manager.yy",},},
+    {"id":{"name":"obj_produto","path":"objects/obj_produto/obj_produto.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"inicializar","path":"scripts/inicializar/inicializar.yy",},},
+    {"id":{"name":"back","path":"sprites/back/back.yy",},},
+    {"id":{"name":"spr_item","path":"sprites/spr_item/spr_item.yy",},},
+    {"id":{"name":"spr_manager","path":"sprites/spr_manager/spr_manager.yy",},},
+    {"id":{"name":"spr_produto","path":"sprites/spr_produto/spr_produto.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
