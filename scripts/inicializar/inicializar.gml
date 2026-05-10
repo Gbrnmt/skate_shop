@@ -22,7 +22,7 @@ function atualiza_tempo()
 global.exibe_managers = false;
 
 //variaveis de dinheiro
-global.gold = 1;
+global.gold = 4;
 
 //guardando qm e meu manager
 global.managers = [0, 0, 0, 0, 0, 0, 0, 0]
