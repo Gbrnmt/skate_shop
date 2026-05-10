@@ -19,6 +19,7 @@ function atualiza_tempo()
 	global.framerate = global.gamesegundos * global.game_spd;
 }
 
+global.exibe_managers = false;
 
 //variaveis de dinheiro
 global.gold = 1;

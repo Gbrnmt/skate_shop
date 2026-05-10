@@ -15,3 +15,5 @@ if (keyboard_check(ord("L")))
 {
 	global.gold = 100000;
 }
+
+gerencia_produtos();

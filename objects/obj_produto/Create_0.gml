@@ -7,7 +7,15 @@ timer = 0;
 //defininindo se posso fazer
 fazer = false;
 
-tenho_manager = global.managers[indice];
+if( array_length(global.managers) <= indice)
+{
+	tenho_manager = global.managers[indice];
+}
+else
+{
+	array_push(global.managers, 0 );
+	tenho_manager = 0;
+}
 
 // meus custos
 custo = custo_base;

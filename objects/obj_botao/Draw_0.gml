@@ -1,7 +1,9 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 
-if(global.exibe_managers)
-{
-	desenha_manager();
-}
+
+draw_self();
+
+draw_set_color(c_black);
+draw_text(x,y , "GERENTEs");
+draw_set_color(-1);
