@@ -5,6 +5,15 @@
 //lista dos produtos
 produtos = [];
 
+//dados da surfce dos produtos
+
+surf_prod = noone;
+prod_w	  = 860;
+prod_h    = 500;
+prod_x    = 48;
+prod_y    = 48;
+
+
 
 base_y = 80
 produtos_y = 0 + base_y;
@@ -44,14 +53,13 @@ gerencia_produtos = function()
 	_meu_y += rolagem(30);
 	
 	var _qtd = array_length(produtos);
-	var _max = (_alt * _qtd) + (_marg * _qtd) + _marg - room_height;
+	var _max = (_alt * _qtd) + (_marg * _qtd) + _marg - prod_h;
 	
 	_meu_y = clamp(_meu_y, -_max, 0)
 	
 	for (var i = 0; i < array_length(produtos); i++)
 	{
-		var _marg = 20;
-		var _x = 160;
+		var _x = 24;
 		var _y = _meu_y + _marg + ((i * _alt) + (i * _marg));
 	
 		with(produtos[i])
@@ -61,5 +69,41 @@ gerencia_produtos = function()
 		}
 	}
 }
+
+
+//criando a surfaze dos produtos
+desenha_produtos = function()
+{
+	
+	if(surface_exists(surf_prod))
+	{
+		surface_set_target(surf_prod);
+		draw_clear_alpha(c_black, 0);
+		
+		//draw_rectangle_color(0, 0, prod_w, prod_h, c_black, c_black, c_black, c_black, false)
+		
+		with(obj_produto)
+		{
+			desenha_produto();
+			meu_x = other.prod_x;
+			meu_y = other.prod_y;
+		}
+		
+		
+		
+		surface_reset_target();
+		
+		draw_surface(surf_prod, prod_x, prod_y);
+	}
+	else
+	{
+		surf_prod = surface_create(prod_w, prod_h);
+	}
+	
+	
+}
+
+
+
 
 cria_produtos(array_length(global.struct_produtos));

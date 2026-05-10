@@ -4,9 +4,12 @@
 level = 0;
 timer = 0;
 
+
+meu_x = 0;
+meu_y = 0;
 //defininindo se posso fazer
 fazer = false;
-
+infos = false;
 if( array_length(global.managers) <= indice)
 {
 	tenho_manager = global.managers[indice];
@@ -69,7 +72,10 @@ desenha_produto = function()
 	var _x = x;
 	var _y = y + 24;
 	draw_ellipse_color(_x - 24, _y - 16, _x + 24, _y + 16, c_dkgray, c_dkgray,false);
+	
+	gpu_set_colourwriteenable(1, 1, 1, 0);
 	draw_text(_x, _y, level);
+	gpu_set_colourwriteenable(1, 1, 1, 1);
 	
 	//desenhando barra de progresso 
 	var _x1 = x + 42;
@@ -85,6 +91,7 @@ desenha_produto = function()
 	//desenhando o quanto eu rendo 
 	draw_set_halign(2);
 	var _str = convert_num(lucro);
+	gpu_set_colourwriteenable(1, 1, 1, 0);
 	draw_text(_x2 - 10,_y1 + sprite_height / 8, _str);
 	draw_set_halign(1);
 	
@@ -103,6 +110,7 @@ desenha_produto = function()
 	draw_rectangle_color(_x1, _y1, _x2, _y2, _cor, _cor, _cor, _cor, false );
 	draw_text_transformed(_x1 + _larg/2, _y1 + 16, _str, 1,1,0 );
 	
+	
 	//desenhando o tempo que leva
 	var _s = floor((tempo - timer) % 60);
 	var _m = ((tempo - timer) div 60) % 60;
@@ -113,7 +121,7 @@ desenha_produto = function()
 	var _min = _m > 9 ? _m : "0" + string(_m);
 	var _hor = _h > 9 ? _h : "0" + string(_h);
 	draw_text(x + sprite_width - 24 , _y1 + 16, string("{0}:{1}:{2}", _hor, _min, _seg))
-	
+	gpu_set_colourwriteenable(1, 1, 1, 1);
 	
 	draw_set_halign(1);
 	
@@ -121,9 +129,11 @@ desenha_produto = function()
 	draw_set_halign(-1);
 	
 	
-	if (efeito_comprar)
+	if (infos)
 	{
+
 		exibe_info();
+		
 	}
 	draw_set_font(-1);
 	
@@ -139,10 +149,11 @@ exibe_info = function()
 	var _marg = 10;
 	
 	draw_sprite_stretched(spr_info,0,_x1, _y1, sprite_width, sprite_height);
-	
+	gpu_set_colourwriteenable(1, 1, 1, 0);
 	draw_text(_x1 + _marg, _y1 + _marg, nome);
 	
 	draw_text_ext(_x1 + _marg, _y1 + 30 , descricao, 20,  sprite_width - _marg * 2);
+	gpu_set_colourwriteenable(1, 1, 1, 1);
 	
 }
 
