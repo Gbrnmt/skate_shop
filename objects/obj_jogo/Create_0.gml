@@ -34,15 +34,21 @@ cria_produtos = function(_qtd = 1)
 		//meus dados 
 		var _struct = global.struct_produtos[i];
 		
+		
 		produtos[i] = instance_create_layer(0, 0, layer, obj_produto, _struct);
 		
 		if(global.produtos_info[i] != 0)
 		{
+			
+			global.managers[i] = global.produtos_info[i].tenho_manager
+			
 			with(produtos[i])
 			{
 				level = global.produtos_info[i].level;
 				comprado = global.produtos_info[i].comprado;
 				tenho_manager = global.produtos_info[i].tenho_manager;
+				
+				ajusta_infos();
 			}
 		}
 	}
@@ -53,8 +59,11 @@ cria_managers = function()
 {
 	for ( var i = 0; i < array_length(produtos); i++)
 	{
-		var _meu_produto 
-		managers[i] = instance_create_layer(900, 100 + i * 100, layer, obj_manager)
+		var _meu_produto =
+		{
+			indice : i
+		}
+		managers[i] = instance_create_layer(900, 100 + i * 100, layer, obj_manager, _meu_produto)
 		
 		managers[i].custo = global.produtos[i].custo_base * 10;
 		managers[i].indice = i;

@@ -29,8 +29,9 @@ for (var i = 0; i < array_length(global.produtos); i++)
 		}
 	}
 }
-
-draw_text(20, _alt * _n++, _dinheiro_seg);
+global.gold_seg = _dinheiro_seg
+var _str = convert_num(global.gold_seg)
+draw_text(20, _alt * _n++, _str);
 
 
 

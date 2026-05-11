@@ -50,10 +50,15 @@ function save_game()
 	
 	var _produtos = array_map(_qtd_prod, _salvar_dados);
 	
+	var _tempo_atual = date_current_datetime();
+	
 	var _struct =
 	{
 		gold : global.gold,
-		produtos : _produtos
+		produtos : _produtos,
+		gold_seg : global.gold_seg,
+		tempo : _tempo_atual
+		
 	};
 	
 	var _string = json_stringify(_struct);
@@ -79,6 +84,15 @@ function load_game()
 
 		//passando a informacoes do produto para o jogo
 		global.produtos_info = _struct.produtos;
+		
+		var _tempo = date_current_datetime();
+		var _dif = date_second_span(_struct.tempo, _tempo);
+		var _dinheiro_feito = _dif * _struct.gold_seg;
+		var _str = convert_num(_dinheiro_feito);
+		
+		global.gold += _dinheiro_feito;
+		
+		
 	
 		file_text_close(_file);
 	}

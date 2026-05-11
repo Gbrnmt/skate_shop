@@ -23,6 +23,8 @@ global.exibe_managers = false;
 
 //variaveis de dinheiro
 global.gold = 4;
+global.gold_seg = 0;
+
 
 //guardando qm e meu manager
 global.managers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]

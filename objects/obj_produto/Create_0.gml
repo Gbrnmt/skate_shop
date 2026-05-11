@@ -10,15 +10,7 @@ meu_y = 0;
 //defininindo se posso fazer
 fazer = false;
 infos = false;
-if( array_length(global.managers) <= indice)
-{
-	tenho_manager = global.managers[indice];
-}
-else
-{
-	array_push(global.managers, 0 );
-	tenho_manager = 0;
-}
+tenho_manager = false;
 
 // meus custos
 custo = custo_base;
@@ -45,6 +37,14 @@ comprar = function()
 	level++;
 	
 	lucro = lucro_base * level;
+}
+
+ajusta_infos = function()
+{
+	lucro = lucro_base * level;
+	custo = floor(custo_base * (power(incremento, level)));
+	
+	if (comprado) fazer = true;
 }
 
 acao = function()
