@@ -25,11 +25,11 @@ global.exibe_managers = false;
 global.gold = 4;
 
 //guardando qm e meu manager
-global.managers = [0, 0, 0, 0, 0, 0, 0, 0]
+global.managers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 //lista dos produtod 
-global.produtos = [0, 0, 0, 0, 0, 0, 0, 0]
-
+global.produtos = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+global.produtos_info = array_create(10, 0);
 
 //abrindo omeu jason
 var _file = file_text_open_read("dados.json");
@@ -48,7 +48,7 @@ while (true)
 }
 global.struct_produtos = json_parse(_txt).items;
 
-
+file_text_close(_file);
 
 
 

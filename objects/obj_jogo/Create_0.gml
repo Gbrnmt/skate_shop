@@ -1,6 +1,7 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 
+load_game();
 
 //lista dos produtos
 produtos = [];
@@ -28,10 +29,22 @@ cria_produtos = function(_qtd = 1)
 {
 	for ( var i = 0; i < _qtd; i++)
 	{
+		
+		
 		//meus dados 
 		var _struct = global.struct_produtos[i];
 		
 		produtos[i] = instance_create_layer(0, 0, layer, obj_produto, _struct);
+		
+		if(global.produtos_info[i] != 0)
+		{
+			with(produtos[i])
+			{
+				level = global.produtos_info[i].level;
+				comprado = global.produtos_info[i].comprado;
+				tenho_manager = global.produtos_info[i].tenho_manager;
+			}
+		}
 	}
 }
 
