@@ -3,28 +3,28 @@
 
 function convert_num(_num, _dec = 2)
 {
-	if _num == 0 return string_format(_num, 0, _dec);
-	
-	var _valores = ["","K","M","B","T","q","Q","s","S"];
-	var _n = floor(log10(_num));
-	var _n2 = (_num / power(10,_n));
-	var _ind = (_n div 3);
-	var _res = (_n % 3);
-	
-	var _val = _n2 * (power(10, _res));
-	var _str = "";
-	var _notRound = 0.000;
-	if (frac(_val) > 0) //Se houver valor decimal, ou seja se _val = 1049, tem valor decimal de .049
-	{
-		_notRound = 0.005; //Remove 0.005 do valor para ele arredondar para baixo
-		_str = string_format(_val-_notRound, 0, _dec) + _valores[_ind];
-	}
-	else
-	{
-		_str = "$" + string_format(_val, 0, 0) + _valores[_ind];
-	}
-	
-	return _str;
+    // Se for 0, retorna logo formatado para evitar cálculos
+    if (_num == 0) return "$0";
+    
+    var _valores = ["", "K", "M", "B", "T", "q", "Q", "s", "S"];
+    var _ind = 0;
+    var _temp_num = abs(_num); // Usamos o valor absoluto para o cálculo
+    
+    // Loop para encontrar o sufixo correto (K, M, B...)
+    while (_temp_num >= 1000 && _ind < array_length(_valores) - 1) 
+    {
+        _temp_num /= 1000;
+        _ind++;
+    }
+    
+    // string_format(valor, total_de_caracteres, decimais)
+    // Usar 0 no total_de_caracteres ajuda, mas não remove todos os espaços no GM
+    var _str_val = string_format(_temp_num, 0, _dec);
+    
+    // REMOVE OS ESPAÇOS EM BRANCO (O pulo do gato para o $ aparecer)
+    _str_val = string_trim(_str_val); 
+    
+    return "$" + _str_val + _valores[_ind];
 }
 
 //salvando o jogo
@@ -38,14 +38,18 @@ function save_game()
 	
 	var _salvar_dados = function(_elemento, _indice)
 	{
-		_elemento =
+		if(instance_exists(global.produtos[_indice]))
 		{
-		//pégando as informacoes
-		comprado : global.produtos[_indice].comprado,
-		level	 : global.produtos[_indice].level,
-		tenho_manager : global.produtos[_indice].tenho_manager
-		};
-		return _elemento;
+		
+			_elemento =
+			{
+			//pégando as informacoes
+			comprado : global.produtos[_indice].comprado,
+			level	 : global.produtos[_indice].level,
+			tenho_manager : global.produtos[_indice].tenho_manager
+			};
+			return _elemento;
+		}
 	}
 	
 	var _produtos = array_map(_qtd_prod, _salvar_dados);

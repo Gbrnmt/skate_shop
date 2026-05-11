@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_produto",
-    "path":"sprites/spr_produto/spr_produto.yy",
+    "name":"spr_caixa_info",
+    "path":"sprites/spr_caixa_info/spr_caixa_info.yy",
   },
   "spriteMaskId":null,
   "visible":true,

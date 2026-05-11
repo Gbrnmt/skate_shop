@@ -230,5 +230,5 @@ desenha_produtos = function()
 
 
 
-cria_produtos(array_length(global.struct_produtos));
-cria_managers();
+//cria_produtos(array_length(global.struct_produtos));
+//cria_managers();
