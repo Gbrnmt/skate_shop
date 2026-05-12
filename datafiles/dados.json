@@ -2,83 +2,83 @@
   "items": [
     {
       "indice": 0,
-      "nome": "Skate Montado Iniciante",
-      "custo_base": 250,
+      "nome": "Skate Montado CBGANG",
+      "custo_base": 120,
       "tempo": 1,
-      "lucro_base": 12,
-      "descricao": "Um skate simples e barato, perfeito para quem está começando no mundo do skate."
+      "lucro_base": 6,
+      "descricao": "Skate de madeira premium 8.0, rodas 53mm e trucks em alumínio."
     },
     {
       "indice": 1,
-      "nome": "Rolamento ABEC 7",
-      "custo_base": 600,
-      "tempo": 2,
-      "lucro_base": 40,
-      "descricao": "Rolamentos rápidos que deixam o skate mais leve e veloz."
+      "nome": "Lixa Mob Grip",
+      "custo_base": 650,
+      "tempo": 3,
+      "lucro_base": 22,
+      "descricao": "A lixa mais colante do mundo, preferida pelos profissionais."
     },
     {
       "indice": 2,
-      "nome": "Lixa Importada",
-      "custo_base": 1200,
-      "tempo": 4,
-      "lucro_base": 90,
-      "descricao": "Lixa premium com ótima aderência para acertar manobras."
+      "nome": "Rolamentos Bones Reds",
+      "custo_base": 2400,
+      "tempo": 5,
+      "lucro_base": 70,
+      "descricao": "Líder em vendas, oferece alta velocidade e muita durabilidade."
     },
     {
       "indice": 3,
-      "nome": "Truck Independent",
-      "custo_base": 2500,
-      "tempo": 6,
-      "lucro_base": 220,
-      "descricao": "Truck profissional extremamente resistente e estável."
+      "nome": "Rodas Spitfire Formula 4",
+      "custo_base": 9500,
+      "tempo": 8,
+      "lucro_base": 230,
+      "descricao": "Rodas de uretano premium que não dão flat e correm muito mais."
     },
     {
       "indice": 4,
-      "nome": "Roda Spitfire",
-      "custo_base": 5000,
-      "tempo": 8,
-      "lucro_base": 480,
-      "descricao": "Rodas famosas pela velocidade e controle nas pistas."
+      "nome": "Truck Independent Stage 11",
+      "custo_base": 32000,
+      "tempo": 12,
+      "lucro_base": 850,
+      "descricao": "O truck mais resistente da história com curvas perfeitas."
     },
     {
       "indice": 5,
-      "nome": "Shape Maple Profissional",
-      "custo_base": 9500,
-      "tempo": 12,
-      "lucro_base": 1100,
-      "descricao": "Shape de maple canadense com pop forte e alta durabilidade."
+      "nome": "Shape Maple Creature",
+      "custo_base": 1100000,
+      "tempo": 18,
+      "lucro_base": 3200,
+      "descricao": "Maple canadense de alta performance com pop absurdo e leveza."
     },
     {
       "indice": 6,
-      "nome": "Tênis Nike SB",
-      "custo_base": 18000,
-      "tempo": 20,
-      "lucro_base": 2600,
-      "descricao": "Tênis profissional confortável e resistente para sessões pesadas."
+      "nome": "Tênis Nike SB Dunk Low",
+      "custo_base": 4200000,
+      "tempo": 25,
+      "lucro_base": 12000,
+      "descricao": "Ícone da cultura skate com amortecimento Zoom Air contra impactos."
     },
     {
       "indice": 7,
-      "nome": "Skate Santa Cruz Completo",
-      "custo_base": 40000,
-      "tempo": 35,
-      "lucro_base": 7000,
-      "descricao": "Setup completo de uma das marcas mais famosas do skate."
+      "nome": "Rolamentos Bones Swiss",
+      "custo_base": 1500000,
+      "tempo": 40,
+      "lucro_base": 48000,
+      "descricao": "O padrão ouro dos rolamentos, rápidos e precisos para sua sessão."
     },
     {
       "indice": 8,
-      "nome": "Longboard Loaded",
-      "custo_base": 95000,
+      "nome": "Skate Santa Cruz Winkowski",
+      "custo_base": 5500000,
       "tempo": 60,
-      "lucro_base": 22000,
-      "descricao": "Longboard top de linha usado para downhill e cruising."
+      "lucro_base": 180000,
+      "descricao": "Edição especial com artes icônicas e shape old school moderno."
     },
     {
       "indice": 9,
-      "nome": "Setup Pro Tony Hawk Edition",
-      "custo_base": 250000,
+      "nome": "Setup Pro Tony Hawk Birdhouse",
+      "custo_base": 22000000,
       "tempo": 120,
-      "lucro_base": 65000,
-      "descricao": "O setup definitivo inspirado nos equipamentos usados por lendas do skate."
+      "lucro_base": 850000,
+      "descricao": "O skate da lenda, montado com o que existe de melhor no planeta."
     }
   ]
 }

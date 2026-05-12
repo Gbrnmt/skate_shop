@@ -13,7 +13,7 @@ lucro_base = global.struct_produtos[indice].lucro_base;
 tempo_base = global.struct_produtos[indice].tempo;
 tempo = tempo_base;
 
-valor_manager =custo_base * 200;
+valor_manager =custo_base * 100;
 //upgrade
 
 
@@ -221,15 +221,25 @@ exibe_info = function()
 	draw_text_transformed(_x1 + _marg, _y1 + _marg, nome, .2, .2, 0);
 	
 	//descricao
+
 	draw_text_ext_transformed(
+
     _x1 + _marg,
+
     _y1 + _marg + 15,
+
     descricao,
+
     120, // largura máxima antes de quebrar
+
     -1,
+
     0.2,
+
     0.2,
+
     0
+
 );
 	
 	//draw_text_ext(_x1 + _marg, _y1 + 30 , descricao, 20,  sprite_width - _marg * 2);

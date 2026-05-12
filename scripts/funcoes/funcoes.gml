@@ -91,7 +91,7 @@ function load_game()
 		
 		var _tempo = date_current_datetime();
 		var _dif = date_second_span(_struct.tempo, _tempo);
-		var _dinheiro_feito = _dif * _struct.gold_seg;
+		var _dinheiro_feito = (_dif * _struct.gold_seg)* 0.3;
 		var _str = convert_num(_dinheiro_feito);
 		
 		global.gold += _dinheiro_feito;
