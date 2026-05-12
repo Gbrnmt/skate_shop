@@ -1,30 +1,28 @@
 
 
 
-function convert_num(_num, _dec = 2)
+function convert_num(_num)
 {
-    // Se for 0, retorna logo formatado para evitar cálculos
-    if (_num == 0) return "$0";
-    
-    var _valores = ["", "K", "M", "B", "T", "q", "Q", "s", "S"];
-    var _ind = 0;
-    var _temp_num = abs(_num); // Usamos o valor absoluto para o cálculo
-    
-    // Loop para encontrar o sufixo correto (K, M, B...)
-    while (_temp_num >= 1000 && _ind < array_length(_valores) - 1) 
+
+    //Retornando a string arrumadinha já
+    var _custo2 = _num;
+    var _valores = ["", "K", "M", "B", "T", "Q"];
+    var _i = 0;
+
+    //Sempre que o valor for maior do que 1000, eu tiro 3 zeros dele
+    while(_custo2 > 1000)
     {
-        _temp_num /= 1000;
-        _ind++;
+
+        //Tiro 3 zeros dele
+        _custo2 /= 1000;
+
+        //Sempre que eu rodei isso, eu subo para a próxima casa
+        _i++;
     }
-    
-    // string_format(valor, total_de_caracteres, decimais)
-    // Usar 0 no total_de_caracteres ajuda, mas não remove todos os espaços no GM
-    var _str_val = string_format(_temp_num, 0, _dec);
-    
-    // REMOVE OS ESPAÇOS EM BRANCO (O pulo do gato para o $ aparecer)
-    _str_val = string_trim(_str_val); 
-    
-    return "$" + _str_val + _valores[_ind];
+
+    var _str2 = "R$ " + string_format(_custo2, 0, 2) + _valores[_i];
+
+    return _str2;
 }
 
 //salvando o jogo
@@ -46,7 +44,9 @@ function save_game()
 			//pégando as informacoes
 			comprado : global.produtos[_indice].comprado,
 			level	 : global.produtos[_indice].level,
-			tenho_manager : global.produtos[_indice].tenho_manager
+			tenho_manager : global.produtos[_indice].tenho_manager,
+			level_upgrade : global.produtos[_indice].level_upgrade,
+			produtividade : global.produtos[_indice].produtividade,
 			};
 			return _elemento;
 		}

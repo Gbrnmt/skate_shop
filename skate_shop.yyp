@@ -37,6 +37,7 @@
   },
   "name":"skate_shop",
   "resources":[
+    {"id":{"name":"fnt_exibicao","path":"fonts/fnt_exibicao/fnt_exibicao.yy",},},
     {"id":{"name":"fnt_texto","path":"fonts/fnt_texto/fnt_texto.yy",},},
     {"id":{"name":"obj_botao","path":"objects/obj_botao/obj_botao.yy",},},
     {"id":{"name":"obj_jogo","path":"objects/obj_jogo/obj_jogo.yy",},},
@@ -49,6 +50,7 @@
     {"id":{"name":"inicializar","path":"scripts/inicializar/inicializar.yy",},},
     {"id":{"name":"back","path":"sprites/back/back.yy",},},
     {"id":{"name":"spr_barra_temp","path":"sprites/spr_barra_temp/spr_barra_temp.yy",},},
+    {"id":{"name":"spr_botao_menu","path":"sprites/spr_botao_menu/spr_botao_menu.yy",},},
     {"id":{"name":"spr_botao","path":"sprites/spr_botao/spr_botao.yy",},},
     {"id":{"name":"spr_botao7","path":"sprites/spr_botao7/spr_botao7.yy",},},
     {"id":{"name":"spr_caixa_info","path":"sprites/spr_caixa_info/spr_caixa_info.yy",},},

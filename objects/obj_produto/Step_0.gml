@@ -28,11 +28,11 @@ if(mouse_manager)
 	{
 		if (!tenho_manager)
 		{
-			if (global.gold >= custo_base * 10)
+			if (global.gold >= valor_manager)
 			{
 				//comprando o manager 
 				tenho_manager = true;
-				global.gold -= custo_base * 10;
+				global.gold -= valor_manager;
 				fazer = true;
 				
 			}

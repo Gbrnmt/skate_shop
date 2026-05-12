@@ -2,13 +2,19 @@
 // Você pode escrever seu código neste editor
 //meu level
 level = 0;
+level_upgrade = 100;
+
+produtividade = 1;
 
 nome = global.struct_produtos[indice].nome;
 descricao = global.struct_produtos[indice].descricao;
 custo_base = global.struct_produtos[indice].custo_base;
 lucro_base = global.struct_produtos[indice].lucro_base;
-tempo = global.struct_produtos[indice].tempo;
+tempo_base = global.struct_produtos[indice].tempo;
+tempo = tempo_base;
 
+valor_manager =custo_base * 200;
+//upgrade
 
 
 
@@ -40,32 +46,53 @@ incremento = 1.07;
 
 comprar = function()
 {
-	global.gold -= custo;
-	comprado = true;	
-	//aumentando o custo
-	
-	var _custo_atual = floor(custo_base * (power(incremento, level)));
-	
-	custo += _custo_atual;
-	level++;
-	
-	lucro = lucro_base * level;
+    if (global.gold >= custo)
+    {
+        global.gold -= custo;
+        comprado = true;
+
+        level++;
+		
+		if (level == level_upgrade)
+		{
+			level_upgrade *= 2.5;
+			produtividade *= 2;
+			tempo = tempo_base / produtividade;
+		}
+
+        // custo sobe MUITO mais rápido
+        custo = floor(custo_base * power(incremento, level * 1.35));
+
+        // lucro cresce mais devagar
+        lucro = floor(lucro_base * power(level, 0.85));
+    }
 }
 
 ajusta_infos = function()
 {
-	lucro = lucro_base * level;
-	custo = floor(custo_base * (power(incremento, level)));
+    lucro = floor(lucro_base * power(level, 0.85));
+    custo = floor(custo_base * power(incremento, level * 1.35));
 	
-	if (comprado && tenho_manager) fazer = true;
+	if (level == level_upgrade)
+		{
+			level_upgrade *= 2.5;
+			produtividade *= 2;
+			tempo = tempo_base / produtividade;
+		}
+
+    if (comprado && tenho_manager)
+    {
+        fazer = true;
+    }
 }
 
 acao = function()
 {
-	timer = 0;
-	fazer = tenho_manager;
-	//dandop lucro
-	global.gold += lucro;
+    timer = 0;
+    fazer = tenho_manager;
+
+    // ganha ouro
+    global.gold += lucro;
 }
 
 //desenhando o produto
@@ -83,7 +110,8 @@ desenha_produto = function()
 	
 	draw_set_color(c_white);
 	//desenhando o level
-	draw_text_transformed(x + 22, y + 12, level, .5, .5, 0);
+	var _txt = string("{0}/{1}",level, level_upgrade);
+	draw_text_transformed(x + 22, y + 12, _txt, .5, .5, 0);
 	
 	//desenhando o meu level
 	var _x = x;
@@ -137,7 +165,7 @@ desenha_produto = function()
 	{
 		draw_sprite(spr_caixa_info2, mouse_manager, x + sprite_width, y);
 		//desenhando o preco do meu custo
-		draw_text_ext_transformed( x + sprite_width + 21, y, convert_num(custo_base * 10),20,44, .5, .5, 0)
+		draw_text_ext_transformed( x + sprite_width + 21, y, convert_num(valor_manager),20,44, .5, .5, 0)
 	}
 	else
 	{
@@ -169,9 +197,10 @@ desenha_produto = function()
 	if (infos)
 	{
 
-		//exibe_info();
+		exibe_info();
 		
 	}
+	draw_set_color(-1)
 	draw_set_font(-1);
 	
 	
@@ -181,15 +210,32 @@ desenha_produto = function()
 //exibindo as informacoes do produto
 exibe_info = function()
 {
-	var _x1 =  x + sprite_width + 12;
-	var _y1 = y - sprite_height/2;
-	var _marg = 10;
-	
-	draw_sprite_stretched(spr_info,0,_x1, _y1, sprite_width, sprite_height);
+	var _x1 =  115;
+	var _y1 = 270;
+	var _marg = 12;
+	draw_set_font(fnt_exibicao);
+	draw_set_halign(0)
+	draw_set_valign(1)
+	//draw_sprite_stretched(spr_info,0,_x1, _y1, sprite_width, sprite_height);
 	//gpu_set_colourwriteenable(1, 1, 1, 0);
-	draw_text(_x1 + _marg, _y1 + _marg, nome);
+	draw_text_transformed(_x1 + _marg, _y1 + _marg, nome, .2, .2, 0);
 	
-	draw_text_ext(_x1 + _marg, _y1 + 30 , descricao, 20,  sprite_width - _marg * 2);
+	//descricao
+	draw_text_ext_transformed(
+    _x1 + _marg,
+    _y1 + _marg + 15,
+    descricao,
+    120, // largura máxima antes de quebrar
+    -1,
+    0.2,
+    0.2,
+    0
+);
+	
+	//draw_text_ext(_x1 + _marg, _y1 + 30 , descricao, 20,  sprite_width - _marg * 2);
+	draw_set_font(-1);
+	draw_set_halign(-1)
+	draw_set_valign(-1)
 	//gpu_set_colourwriteenable(1, 1, 1, 1);
 	
 }
@@ -198,7 +244,9 @@ if (global.produtos_info[indice] != 0)
 	level = global.produtos_info[indice].level;
 	comprado = global.produtos_info[indice].comprado;
 	tenho_manager = global.produtos_info[indice].tenho_manager;
-	
+	level_upgrade = global.produtos_info[indice].level_upgrade;
+	produtividade = global.produtos_info[indice].produtividade;
+	tempo = tempo_base / produtividade;
 	ajusta_infos();
 }
 

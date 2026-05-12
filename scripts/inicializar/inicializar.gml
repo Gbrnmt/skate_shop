@@ -22,7 +22,7 @@ function atualiza_tempo()
 global.exibe_managers = false;
 
 //variaveis de dinheiro
-global.gold = 4;
+global.gold = 250;
 global.gold_seg = 0;
 
 

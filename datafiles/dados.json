@@ -2,83 +2,83 @@
   "items": [
     {
       "indice": 0,
-      "nome": "Morango",
-      "custo_base": 4,
+      "nome": "Skate Montado Iniciante",
+      "custo_base": 250,
       "tempo": 1,
-      "lucro_base": 1,
-      "descricao": "Um morango bem saboroso."
+      "lucro_base": 12,
+      "descricao": "Um skate simples e barato, perfeito para quem está começando no mundo do skate."
     },
     {
       "indice": 1,
-      "nome": "Bala",
-      "custo_base": 60,
-      "tempo": 3,
-      "lucro_base": 60,
-      "descricao": "Bala azeda deliciosa!"
+      "nome": "Rolamento ABEC 7",
+      "custo_base": 600,
+      "tempo": 2,
+      "lucro_base": 40,
+      "descricao": "Rolamentos rápidos que deixam o skate mais leve e veloz."
     },
     {
       "indice": 2,
-      "nome": "Cereja",
-      "custo_base": 720,
-      "tempo": 6,
-      "lucro_base": 540,
-      "descricao": "Cereja com cobertura a escolha."
+      "nome": "Lixa Importada",
+      "custo_base": 1200,
+      "tempo": 4,
+      "lucro_base": 90,
+      "descricao": "Lixa premium com ótima aderência para acertar manobras."
     },
     {
       "indice": 3,
-      "nome": "Bengala doce",
-      "custo_base": 8640,
-      "tempo": 12,
-      "lucro_base": 4320,
-      "descricao": "Uma begala doce, ideal para comer no fim do ano."
+      "nome": "Truck Independent",
+      "custo_base": 2500,
+      "tempo": 6,
+      "lucro_base": 220,
+      "descricao": "Truck profissional extremamente resistente e estável."
     },
     {
       "indice": 4,
-      "nome": "Donut",
-      "custo_base": 103680,
-      "tempo": 12,
-      "lucro_base": 51840,
-      "descricao": "O doce favorito do Homer Simplson."
+      "nome": "Roda Spitfire",
+      "custo_base": 5000,
+      "tempo": 8,
+      "lucro_base": 480,
+      "descricao": "Rodas famosas pela velocidade e controle nas pistas."
     },
     {
       "indice": 5,
-      "nome": "Cheesecake",
-      "custo_base": 1244160,
-      "tempo": 96,
-      "lucro_base": 622080,
-      "descricao": "Cheesecake ou torta de queijo é uma torta doce feita com queijo cremoso."
+      "nome": "Shape Maple Profissional",
+      "custo_base": 9500,
+      "tempo": 12,
+      "lucro_base": 1100,
+      "descricao": "Shape de maple canadense com pop forte e alta durabilidade."
     },
     {
       "indice": 6,
-      "nome": "Sorvete",
-      "custo_base": 14929920,
-      "tempo": 384,
-      "lucro_base": 7464960,
-      "descricao": "Uma bola de sorvete cremoso em um casquinha crocante."
+      "nome": "Tênis Nike SB",
+      "custo_base": 18000,
+      "tempo": 20,
+      "lucro_base": 2600,
+      "descricao": "Tênis profissional confortável e resistente para sessões pesadas."
     },
     {
       "indice": 7,
-      "nome": "Brownie",
-      "custo_base": 179159040,
-      "tempo": 1536,
-      "lucro_base": 89579520,
-      "descricao": "Um pedaço de brownie com cobertura de morango, macio por dentro e crocante por cima."
+      "nome": "Skate Santa Cruz Completo",
+      "custo_base": 40000,
+      "tempo": 35,
+      "lucro_base": 7000,
+      "descricao": "Setup completo de uma das marcas mais famosas do skate."
     },
     {
       "indice": 8,
-      "nome": "Cupcake",
-      "custo_base": 2149908480,
-      "tempo": 6144,
-      "lucro_base": 1074954240,
-      "descricao": "Um bolinho com cobertura e recheio."
+      "nome": "Longboard Loaded",
+      "custo_base": 95000,
+      "tempo": 60,
+      "lucro_base": 22000,
+      "descricao": "Longboard top de linha usado para downhill e cruising."
     },
     {
       "indice": 9,
-      "nome": "Bolo de Aniversário",
-      "custo_base": 25798901760,
-      "tempo": 36864,
-      "lucro_base": 29668737024,
-      "descricao": "Um bolo de aniversário decorado com chantilly e velas coloridas."
+      "nome": "Setup Pro Tony Hawk Edition",
+      "custo_base": 250000,
+      "tempo": 120,
+      "lucro_base": 65000,
+      "descricao": "O setup definitivo inspirado nos equipamentos usados por lendas do skate."
     }
   ]
 }

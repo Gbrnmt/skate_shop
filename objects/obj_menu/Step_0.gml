@@ -5,26 +5,30 @@ var option_start_y = (room_height - (array_length(menu_options) * option_spacing
 
 var clicked = false;
 
+// --- 1. RESET DA SELEÇÃO ---
+// Isso garante que se o mouse não estiver em cima de nada, o frame volte para 0
+selected_option = -1; 
+
 // --- Verificação de Mouse ---
 for (var i = 0; i < array_length(menu_options); i++) {
-    // Calcula a posição Y exata da opção atual
     var option_y = option_start_y + i * option_spacing;
     if (i == 1) option_y += extra_space_second;
 
-    // Define a largura e altura da área de colisão (hitbox)
-    var txt_w = string_width(menu_options[i]);
-    var txt_h = string_height(menu_options[i]);
+    // --- 2. HITBOX PELA SPRITE (Mais preciso para botões) ---
+    // Usamos o tamanho da sprite para saber onde o mouse pode clicar
+    var spr_w = sprite_get_width(spr_botao_menu);
+    var spr_h = sprite_get_height(spr_botao_menu);
     
-    var option_x1 = (room_width - txt_w) / 2;
-    var option_x2 = option_x1 + txt_w;
-    var option_y1 = option_y;
-    var option_y2 = option_y + txt_h;
+    // Se sua sprite tem origem no centro (Middle Center):
+    var option_x1 = (room_width / 2) - (spr_w / 2);
+    var option_x2 = (room_width / 2) + (spr_w / 2);
+    var option_y1 = option_y - (spr_h / 2);
+    var option_y2 = option_y + (spr_h / 2);
 
-    // Se o mouse estiver sobre o texto
+    // Se o mouse estiver sobre a área do botão
     if (mouse_x > option_x1 && mouse_x < option_x2 && mouse_y > option_y1 && mouse_y < option_y2) {
-        selected_option = i; // Destaca a opção
+        selected_option = i; 
         
-        // Verifica o clique do mouse
         if (mouse_check_button_pressed(mb_left)) {
             clicked = true;
         }
@@ -32,7 +36,8 @@ for (var i = 0; i < array_length(menu_options); i++) {
 }
 
 // --- Execução das Ações ---
-if (clicked) {
+// Só executa se houve um clique E se existe uma opção selecionada (diferente de -1)
+if (clicked && selected_option != -1) {
     switch (selected_option) {
         case 0: // Iniciar Jogo
             global.game_running = true;

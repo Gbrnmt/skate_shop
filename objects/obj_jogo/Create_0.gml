@@ -3,6 +3,10 @@
 alarm[0] = game_get_speed(gamespeed_fps) * 120
 load_game();
 
+
+gui_larg = display_get_gui_width();
+
+
 //lista dos produtos
 produtos = [];
 managers = [];
